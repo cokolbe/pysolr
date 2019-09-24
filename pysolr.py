@@ -1019,7 +1019,8 @@ class Solr(object):
         # if no commands (no boost, no atomic updates) needed use json multidocument api
         #   The JSON API skipts the XML conversion and speedup load from 15 to 20 times.
         #   CPU Usage is drastically lower.
-        if boost is None and fieldUpdates is None:
+        # if boost is None and fieldUpdates is None:
+        if False:  # Skip this for compatibility reasons.
             solrapi = "JSON"
             message = docs
             # single doc convert to array of docs
